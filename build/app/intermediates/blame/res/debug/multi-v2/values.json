@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/Supto/Desktop/parking221/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "outputFile": "/home/Supto/Desktop/github/parking221/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
                 {
-                    "source": "/home/Supto/Desktop/parking221/android/app/src/main/res/values/styles.xml",
+                    "source": "/home/Supto/Desktop/github/parking221/android/app/src/main/res/values/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

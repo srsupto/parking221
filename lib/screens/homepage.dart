@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:parking221/screens/postPage.dart';
 import 'package:parking221/screens/profilePage.dart';
 import 'package:parking221/screens/dashboard.dart';
+import 'package:parking221/screens/inbox.dart';
 
 
 
@@ -197,6 +198,7 @@ class _homePageState extends State<homePage> {
 
     PostPage(),
     PostPage(),
+    inbox(),
 
     ProfilePage(),
   ];
@@ -236,6 +238,10 @@ class _homePageState extends State<homePage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite),
+            title: Text(''),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.message),
             title: Text(''),
           ),
           BottomNavigationBarItem(

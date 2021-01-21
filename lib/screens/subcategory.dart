@@ -105,9 +105,9 @@ class HomeState extends State<Home> {
 
 class GridDashboard extends StatelessWidget {
   Items item1 = new Items(
-      title: "Chevrolet",
+      title: "All",
       subtitle: "",
-      img: "assets/chevrolet.png");
+      img: "assets/about.png");
 
   Items item2 = new Items(
     title: "Suzuki",

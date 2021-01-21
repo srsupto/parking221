@@ -30,14 +30,14 @@ class dashboardHomeState extends State<dashboardHome> {
           ),
         ],
         titleSpacing: 70.0,
-        title: //Image.asset('assets/logo.png', fit: BoxFit.cover),
-        SvgPicture.asset(
+        title: Image.asset('assets/logo2.png', fit: BoxFit.cover),
+/*        SvgPicture.asset(
           'assets/icons/logo.svg',
           color: Colors.white,
           //height: 16,
           //width: 16,
           //color: Colors.red[700],
-        ),
+        ),*/
       ),
       backgroundColor: Colors.grey[100],
       body: Column(

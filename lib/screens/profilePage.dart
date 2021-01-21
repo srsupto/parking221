@@ -25,7 +25,7 @@ class _ProfilePageState extends State<ProfilePage> {
               child: TabBar(
                 isScrollable: true,
                 indicatorWeight: 2.0,
-                indicatorColor: Colors.blue,
+                indicatorColor: Colors.white,
                 tabs: <Widget>[
                   Tab(
                     text: 'My Posts',

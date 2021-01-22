@@ -1,11 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:parking221/screens/myPosts.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
   _ProfilePageState createState() => _ProfilePageState();
 }
 
-class _ProfilePageState extends State<ProfilePage> {
+class _ProfilePageState extends State<ProfilePage> with SingleTickerProviderStateMixin {
+
+  final List<Tab> myTabs = <Tab>[
+    Tab(text: 'My Posts'),
+    Tab(text: 'Favorites'),
+  ];
+
+  TabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(vsync: this, length: myTabs.length);
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,30 +42,24 @@ class _ProfilePageState extends State<ProfilePage> {
           profilesection(),
           Container(
             color: Colors.red,
-            child: DefaultTabController(
-              length: 2,
-              child: TabBar(
-                isScrollable: true,
-                indicatorWeight: 2.0,
-                indicatorColor: Colors.white,
-                tabs: <Widget>[
-                  Tab(
-                    text: 'My Posts',
-                  ),
-                  Tab(
-                    text: 'Favorites',
-                  ),
-                ],
-              ),
+            child: TabBar(
+              controller: _tabController,
+              tabs: myTabs,
+              indicatorWeight: 2.0,
+              indicatorColor: Colors.white,
             ),
           ),
 
-          TabBarView(
-            children: <Widget>[
-              Text("h"),
-              Text("h"),
-            ],
+          Expanded(
+            child: TabBarView(
+                controller: _tabController,
+                children: <Widget>[
+                  myPosts(),
+                  Text("h"),
+                ],
+              ),
           ),
+          
         ],
       ),
 

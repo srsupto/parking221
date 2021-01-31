@@ -1,4 +1,4 @@
-#Thu Jan 21 18:15:03 BDT 2021
-base.0=/home/Supto/Desktop/github/parking221/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
+#Thu Jan 28 15:59:11 BDT 2021
+base.0=/home/yammi/AndroidStudioProjects/parking221/parking221/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

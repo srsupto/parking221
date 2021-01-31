@@ -88,6 +88,7 @@ class homePage2 extends StatelessWidget {
                           fit:BoxFit.fill
 
                       ),
+
                     ),
                     ListTile(
                       title: Text('Car', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
@@ -124,10 +125,18 @@ class homePage2 extends StatelessWidget {
 
                       ),
                     ),
-                    ListTile(
-                      title: Text('Motorcycles', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-                      //subtitle: Text('Alen Sparrow'),
-                    ),
+                    Container(
+                      child: RaisedButton(
+                        shape: new RoundedRectangleBorder(
+                          borderRadius: new BorderRadius.circular(30.0),
+                        ),
+                        color: Colors.grey[50],
+                      ),
+                    )
+//                    ListTile(
+//                      title: Text('Motorcycles', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+//                      //subtitle: Text('Alen Sparrow'),
+//                    ),
 
 
 

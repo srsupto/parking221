@@ -155,20 +155,33 @@ class GridDashboard extends StatelessWidget {
                       width: 42, color: Colors.red[700],
                     ),
                     SizedBox(
-                      height: 14,
+                      height: 20,
                     ),
-                    Text(
-                      data.title, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
 
-                    ),
-                    SizedBox(
-                      height: 8,
-                    ),
+
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.3,
+                      height: MediaQuery.of(context).size.height*0.05,
+                      decoration: BoxDecoration(
+                        color: Colors.grey[300],
+//                        border: Border.all(
+//                          color: Colors.red[700],
+//                        ),
+                            borderRadius: BorderRadius.all(Radius.circular(20)),
+                      ),
+                      child: Align(
+                        child: Text(data.title, style: TextStyle(fontFamily: 'Avenir Next', fontWeight: FontWeight.w600, color: Colors.grey[700]),),
+                      ),
+                    )
 
 
                   ],
+
+
                 ),
+
               ),
+
 
               onTap: (){
                 Navigator.push(context, MaterialPageRoute(builder: (context) => SubCategory()),
@@ -186,9 +199,8 @@ class GridDashboard extends StatelessWidget {
 
 class Items {
   String title;
-  String subtitle;
   String img;
-  Items({this.title, this.subtitle, this.img});
+  Items({this.title, this.img});
 }
 
 

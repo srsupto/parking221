@@ -53,6 +53,8 @@ class Body extends StatelessWidget {
               text: "LOGIN",
               press: () {},
             ),
+
+
             SizedBox(height: size.height * 0.01),
             AlreadyHaveAnAccountCheck(
               press: () {
@@ -148,7 +150,7 @@ class TextFieldContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
+      margin: EdgeInsets.symmetric(vertical: 5),
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
       width: size.width * 0.8,
       decoration: BoxDecoration(
@@ -276,18 +278,26 @@ class signUpBody extends StatelessWidget {
             ),*/
             SizedBox(height: size.height * 0.001),
             Image.asset("assets/logo.png", width: 200,),
+            SizedBox(height: 40,),
 
             RoundedInputField(
               hintText: "Your email address",
               onChanged: (value) {},
             ),
             RoundedInputField(
-              hintText: "Your Password",
+              hintText: "Enter Password",
+              onChanged: (value) {}, icon: Icons.wrap_text,
+            ),
+
+            RoundedInputField(
+              hintText: "Confirm Password",
               onChanged: (value) {}, icon: Icons.wrap_text,
             ),
             //RoundedPasswordField(
             //onChanged: (value) {},
             //),
+
+            SizedBox(height: 10,),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -296,32 +306,32 @@ class signUpBody extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        FlatButton(
+                        RaisedButton(
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(18.0),
-                              side: BorderSide(color: Color(0xFFD32F2F))),
+                              side: BorderSide(color: Colors.white)),
+                          onPressed: () {
+                            Navigator.of(context).pushReplacementNamed('/homePage');
+                          },
                           color: Colors.white,
-                          textColor: Color(0xFFD32F2F),
                           padding: EdgeInsets.all(15.0),
-                          onPressed: () {},
-                          child: Text(
-                            "Signup here",
-                            style: TextStyle(
-                                fontSize: 14.0, fontWeight: FontWeight.bold
-                            ),
-                          ),
+                          textColor: Colors.red[700],
+                          child: Text("Sign Up",
+                              style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
                         ),
+
+
                         SizedBox(width: 20),
                         RaisedButton(
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(18.0),
-                              side: BorderSide(color: Color(0xFFD32F2F))),
+                              side: BorderSide(color: Colors.white)),
                           onPressed: () {
                             Navigator.of(context).pushReplacementNamed('/homePage');
                           },
-                          color: Color(0xFFD32F2F),
+                          color: Colors.white,
                           padding: EdgeInsets.all(15.0),
-                          textColor: Colors.white,
+                          textColor: Colors.red[700],
                           child: Text("Guest View",
                               style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
                         ),
@@ -428,18 +438,18 @@ class SocalIcon extends StatelessWidget {
       onTap: press,
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 10),
-        padding: EdgeInsets.all(20),
+        padding: EdgeInsets.all(10),
         decoration: BoxDecoration(
           border: Border.all(
             width: 1,
-            color: Colors.redAccent,
+            color: Colors.grey[200],
           ),
           shape: BoxShape.circle,
         ),
         child: SvgPicture.asset(
           iconSrc,
-          height: 16,
-          width: 16, color: Colors.red[700],
+          height: 14,
+          width: 14, color: Colors.red[700],
         ),
       ),
     );

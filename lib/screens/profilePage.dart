@@ -9,8 +9,12 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> with SingleTickerProviderStateMixin {
 
   final List<Tab> myTabs = <Tab>[
-    Tab(text: 'My Posts'),
-    Tab(text: 'Favorites'),
+    Tab(child: Container(
+      child: Text('My Posts', style: TextStyle(color: Colors.red[700]),),
+    ),),
+    Tab(child: Container(
+      child: Text('My Favorites', style: TextStyle(color: Colors.red[700]),),
+    ),),
   ];
 
   TabController _tabController;
@@ -41,12 +45,12 @@ class _ProfilePageState extends State<ProfilePage> with SingleTickerProviderStat
         children: <Widget>[
           profilesection(),
           Container(
-            color: Colors.red,
+            color: Colors.white,
             child: TabBar(
               controller: _tabController,
               tabs: myTabs,
               indicatorWeight: 2.0,
-              indicatorColor: Colors.white,
+              indicatorColor: Colors.red[700],
             ),
           ),
 
@@ -73,7 +77,7 @@ class profilesection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.red,
-      height: 200,
+      height: 150,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -90,15 +94,15 @@ class profilesection extends StatelessWidget {
                   margin: EdgeInsets.fromLTRB(0, 30, 0, 0),
                 ),
                 Container(
-                  child: Text("Nusrat Jahan Yamim", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 16),),
+                  child: Text("Nusrat Jahan Yamim", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 12),),
                   margin: EdgeInsets.fromLTRB(0, 5, 0, 0),
                 ),
                 Container(
                   margin: EdgeInsets.fromLTRB(0, 5, 0, 0),
                   child: Row(
                     children: <Widget>[
-                      Icon(Icons.location_on, color: Colors.white,),
-                      Text("Dhaka", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 16)),
+                      Icon(Icons.location_on, color: Colors.white, size: 12,),
+                      Text("Dhaka", style: TextStyle(fontWeight: FontWeight.w400, color: Colors.white, fontSize: 11)),
                     ],
                   ),
                 )
@@ -118,20 +122,22 @@ class profilesection extends StatelessWidget {
                   children: <Widget>[
                     Column(
                       children: <Widget>[
-                        Text("0", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 16),),
-                        Text("Posts", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 16),)
+                        Text("2", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 16),),
+                        Text("Posts", style: TextStyle(fontWeight: FontWeight.w400, color: Colors.white, fontSize: 14),)
                       ],
                     ),
+                    SizedBox(width: 8,),
+                    Column(
+                      children: <Widget>[
+                        Text("225", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 16),),
+                        Text("Followers", style: TextStyle(fontWeight: FontWeight.w400, color: Colors.white, fontSize: 14),)
+                      ],
+                    ),
+                    SizedBox(width: 8,),
                     Column(
                       children: <Widget>[
                         Text("0", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 16),),
-                        Text("Followers", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 16),)
-                      ],
-                    ),
-                    Column(
-                      children: <Widget>[
-                        Text("0", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 16),),
-                        Text("Following", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 16),)
+                        Text("Following", style: TextStyle(fontWeight: FontWeight.w400, color: Colors.white, fontSize: 14),)
                       ],
                     )
                   ],
@@ -139,7 +145,12 @@ class profilesection extends StatelessWidget {
               ),
 
               Container(
-                child: RaisedButton(onPressed: (){}, child: Text("Edit Profile"), color: Colors.white,),
+                child: RaisedButton(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(18.0),
+                      side: BorderSide(color: Colors.white)),
+                  onPressed: (){}, child: Text("Edit Profile"), color: Colors.white,
+                ),
               )
             ],
           ),
